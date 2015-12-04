@@ -2,6 +2,8 @@
 
 Examples of hello world C programs, libraries, headers and details of how to compile, link, and run from scratch (without using a build system like Make, cmake, or gyp).
 
+[![Build Status](https://travis-ci.org/springmeyer/learn-c.svg?branch=master)](https://travis-ci.org/springmeyer/learn-c)
+
 ## Requires
 
  - clang compiler
@@ -28,6 +30,12 @@ cd step_1
 ./test.sh
 ```
 
+To build and test a specific example without causing your
+working directory to change:
+
+```sh
+(cd step_1 && ./build.sh && ./test.sh)
+```
 ### definitions
 
 #### compiler
