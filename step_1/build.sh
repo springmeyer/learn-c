@@ -4,10 +4,7 @@ set -eu
 
 # compile run.o "object file"
 # need includes (aka headers) to be found
-# <include boost....>
 clang -c run.c
 
-# link in another step
-# need dependent libraries to be found
-# libboost_test.so 
+# link into executable in second step
 clang -o run run.o
