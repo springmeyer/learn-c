@@ -3,6 +3,6 @@
 set -eu
 
 for dir in $(find ./step* -type d); do
-    echo "Testing $dir"
+    echo "Building $dir"
     (cd $dir && ./build.sh)
 done

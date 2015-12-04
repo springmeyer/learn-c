@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
-set -eu
+set -e
 
-RESULT=$(./run)
+RETURN=0
+
+RESULT=$(./run || RETURN=$?)
 
 if [[ ${RESULT} != "hello world" ]]; then
     echo "Fail!"
-    exit 1
 else
     echo "Success!"
-    exit 0
 fi
+
+exit ${RETURN}
