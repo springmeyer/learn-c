@@ -1,4 +1,5 @@
 #include <stdio.h> // C standard lib
+#include <zlib.h> //
 
 /*
 
@@ -7,17 +8,19 @@ clang -o run run.c
 
 # compile run.o "object file"
 # need includes (aka headers) to be found
-# <include boost....>
-clang -c run.c
+clang -c run.c -I/usr/include
+
 
 # link in another step
 # need dependent libraries to be found
-# libboost_test.so 
-clang -o run run.o
+clang -o run run.o -L/usr/lib -lz
 
 */
 
 int main() {
-    printf("hello world\n");
+    z_stream inflate_s;
+    inflate_s.zalloc = Z_NULL;
+    inflateEnd(&inflate_s);
+    printf("hello world%i",inflate_s.avail_in);
     return 0;
 }
